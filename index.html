@@ -401,72 +401,15 @@
               Fill out this form and I’ll reach out to confirm details and schedule a repair or consultation.
             </p>
 
-            <form action="https://formsubmit.co/jgmtech99@gmail.com" method="POST">
-              <input type="hidden" name="_subject" value="New website request — JGM Technology Services" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-
-              <div class="form-row">
-                <div class="row2">
-                  <div>
-                    <label for="name">Name</label>
-                    <input id="name" name="Name" placeholder="Your name" required />
-                  </div>
-                  <div>
-                    <label for="phone">Phone</label>
-                    <input id="phone" name="Phone" placeholder="905-555-1234" required />
-                  </div>
-                </div>
-
-                <div class="row2">
-                  <div>
-                    <label for="email2">Email</label>
-                    <input id="email2" name="Email" placeholder="you@example.com" />
-                  </div>
-                  <div>
-                    <label for="type">Service type</label>
-                    <select id="type" name="Service Type" required>
-                      <option value="" selected disabled>Select one</option>
-                      <option>Residential repair / troubleshooting</option>
-                      <option>WiFi / networking setup</option>
-                      <option>PC build / upgrade</option>
-                      <option>Printer / smart home setup</option>
-                      <option>Small business IT support</option>
-                      <option>Free business IT health check</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="row2">
-                  <div>
-                    <label for="city">City</label>
-                    <input id="city" name="City" placeholder="Kitchener / Waterloo / Cambridge" required />
-                  </div>
-                  <div>
-                    <label for="contact2">Preferred contact method</label>
-                    <select id="contact2" name="Preferred Contact" required>
-                      <option value="" selected disabled>Select one</option>
-                      <option>Call</option>
-                      <option>Text</option>
-                      <option>Email</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label for="details">Details</label>
-                  <textarea id="details" name="Details" placeholder="Device model, issue description, any error messages, and best times to reach you"></textarea>
-                  <div class="hint">For repairs: include the device model + what changed before the problem started.</div>
-                </div>
-
-                <button class="btn primary" type="submit">Submit Request</button>
-                <div class="hint">
-                  Submissions are emailed to <strong>jgmtech99@gmail.com</strong>. First-time setup: FormSubmit may email you once to confirm delivery.
-                </div>
-              </div>
-            </form>
-          </div>
+            
+            <div class="iframe-wrap" style="margin-top:12px;">
+              <!-- Replace the src below with your Google Form EMBED url -->
+              <iframe title="Service request form" src="https://docs.google.com/forms/d/e/1FAIpQLSdWFnKPw1PbiYTef-h_nZkBwJhL8CDq46uHHjjjJe875U9zQA/viewform?embedded=true" style="width:100%; height:1100px; border:0;"></iframe>
+            </div>
+            <div class="hint" style="margin-top:10px;">
+              To enable: Google Forms → Send → &lt;&gt; Embed HTML → copy the <code>src</code> URL and paste it into the iframe above.
+            </div>
+</div>
 
           <div class="card reveal">
             <div class="badge">📞 Contact</div>
