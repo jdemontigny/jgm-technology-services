@@ -4,81 +4,436 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JGM Technology Services | Kitchener–Waterloo IT Support</title>
-  <meta name="description" content="Professional IT support with a personal touch. Residential computer repair, WiFi/networking, smart home support, and small business IT services in Kitchener, Waterloo, and Cambridge." />
+  <meta name="description" content="Premium, reliable IT support with a personal touch. Residential computer repair, WiFi/networking, smart home support, and small business IT services in Kitchener, Waterloo, and Cambridge." />
+  <meta name="theme-color" content="#1F3A5F" />
   <style>
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#333;line-height:1.6;background:#fff}
-    header{background:#1F3A5F;color:#fff;padding:20px;text-align:center}
-    h1,h2,h3{margin-top:0;color:#1F3A5F}
-    .section{padding:40px 20px;max-width:1000px;margin:auto}
-    .btn{display:inline-block;padding:12px 18px;background:#1F3A5F;color:#fff;text-decoration:none;border-radius:6px;margin:5px 0}
-    .card{border:1px solid #ddd;padding:20px;border-radius:10px;margin:15px 0}
-    footer{text-align:center;padding:20px;background:#f4f4f4;font-size:14px}
+    :root{
+      --navy:#1F3A5F;
+      --navy2:#132a45;
+      --ink:#111827;
+      --text:#374151;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --bg:#ffffff;
+      --soft:#f6f7fb;
+      --accent:#2a6fdb;
+      --max:1120px;
+      --r:18px;
+      --shadow: 0 16px 40px rgba(17,24,39,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      line-height:1.55;
+      background:var(--bg);
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.86);
+      backdrop-filter:saturate(180%) blur(12px);
+      border-bottom:1px solid rgba(229,231,235,.85);
+    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:12px 0;
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:240px}
+    .brand img{height:42px; width:auto; display:block}
+    .brand .name{font-weight:900; color:var(--navy); letter-spacing:.2px; line-height:1.1}
+    .brand .tag{font-size:12px; color:var(--muted)}
+    .links{display:flex; gap:16px; flex-wrap:wrap; justify-content:flex-end}
+    .links a{color:var(--ink); font-weight:800; font-size:14px; opacity:.9}
+    .links a:hover{opacity:1; text-decoration:none}
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:999px;
+      background:linear-gradient(180deg, var(--navy), var(--navy2));
+      color:#fff !important; font-weight:900;
+      box-shadow:0 10px 26px rgba(31,58,95,.22);
+      border:1px solid rgba(17,24,39,.08);
+      white-space:nowrap;
+    }
+    .cta:hover{filter:brightness(1.03); text-decoration:none}
+
+    .hero{
+      padding:44px 0 26px;
+      background:
+        radial-gradient(800px 420px at 12% 0%, rgba(42,111,219,.10), transparent 60%),
+        radial-gradient(700px 360px at 90% 18%, rgba(31,58,95,.12), transparent 55%),
+        linear-gradient(180deg, var(--soft), #fff 72%);
+      border-bottom:1px solid var(--line);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
+      align-items:start;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(30px,4vw,46px);
+      line-height:1.10;
+      letter-spacing:-.7px;
+      color:var(--navy);
+    }
+    .sub{
+      font-size:18px;
+      color:#4b5563;
+      margin:0 0 18px;
+      max-width:62ch;
+    }
+    .pill-row{display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 18px}
+    .pill{
+      border:1px solid rgba(229,231,235,.9);
+      background:rgba(255,255,255,.8);
+      border-radius:999px;
+      padding:8px 12px;
+      font-weight:900;
+      font-size:13px;
+      color:#475264;
+      box-shadow:0 8px 18px rgba(17,24,39,.04);
+    }
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:14px;
+      border:1px solid rgba(229,231,235,.9);
+      background:rgba(255,255,255,.92);
+      font-weight:900; color:var(--ink);
+      box-shadow:0 10px 22px rgba(17,24,39,.05);
+    }
+    .btn.primary{
+      background:linear-gradient(180deg, var(--navy), var(--navy2));
+      color:#fff; border-color:rgba(17,24,39,.08);
+      box-shadow:0 14px 28px rgba(31,58,95,.22);
+    }
+    .btn:hover{filter:brightness(1.02); text-decoration:none}
+
+    .card{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(229,231,235,.95);
+      border-radius:var(--r);
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    .card h3{margin:0 0 8px; color:var(--navy); letter-spacing:-.2px}
+    .small{font-size:13px; color:var(--muted)}
+    .kpi{display:grid; gap:10px; margin-top:12px}
+    .kpi div{display:flex; justify-content:space-between; gap:10px; font-weight:900; border-top:1px dashed var(--line); padding-top:10px; color:var(--ink)}
+
+    section{padding:38px 0}
+    h2{color:var(--navy); margin:0 0 12px; font-size:28px; letter-spacing:-.3px}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    ul{margin:10px 0 0; padding-left:18px}
+    li{margin:7px 0; color:#374151}
+
+    .callout{
+      background:linear-gradient(180deg, #fff, var(--soft));
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .contact{display:grid; grid-template-columns:1.1fr .9fr; gap:18px; align-items:start}
+    .form-row{display:grid; gap:10px; margin-top:10px}
+    label{font-weight:900; font-size:13px; color:var(--ink)}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(229,231,235,.95);
+      font:inherit;
+      background:rgba(255,255,255,.98);
+      box-shadow:0 10px 22px rgba(17,24,39,.04);
+    }
+    textarea{min-height:120px; resize:vertical}
+    .row2{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    .hint{font-size:12px; color:var(--muted); margin-top:6px}
+    .note{font-size:13px; color:#4b5563; margin:10px 0 0}
+
+    footer{
+      padding:18px 0 28px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid var(--line);
+      background:#fff;
+    }
+
+    @media (max-width: 900px){
+      .hero-grid, .grid2, .contact{grid-template-columns:1fr}
+      .links{display:none}
+      .brand img{height:40px}
+      .row2{grid-template-columns:1fr}
+    }
   </style>
 </head>
-<body>
 
+<body>
 <header>
-  <h1>JGM Technology Services</h1>
-  <p>Professional IT Support with a Personal Touch</p>
-  <p><strong>Call or Text:</strong> 905-902-5720</p>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <img src="assets/logo.png" alt="JGM Technology Services logo" />
+        <div>
+          <div class="name">JGM Technology Services</div>
+          <div class="tag">Professional IT Support with a Personal Touch</div>
+        </div>
+      </div>
+
+      <nav class="links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#business">Business IT</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="cta" href="#contact">Request Service</a>
+    </div>
+  </div>
 </header>
 
-<div class="section">
-  <h2>Your Local IT Department</h2>
-  <p>Serving Kitchener, Waterloo, Cambridge and surrounding areas with reliable IT support for homes and small businesses.</p>
-  <a class="btn" href="tel:+19059025720">Call Now</a>
-</div>
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1>Premium IT support — without the corporate runaround.</h1>
+          <p class="sub">
+            Fast, reliable help for computers, WiFi, networking, smart home tech, and small business IT.
+            Serving <strong>Kitchener</strong>, <strong>Waterloo</strong>, <strong>Cambridge</strong> and surrounding areas.
+          </p>
 
-<div class="section">
-  <h2>Residential IT Services</h2>
-  <div class="card">
-    <ul>
-      <li>PC building & upgrades</li>
-      <li>Laptop troubleshooting & repair</li>
-      <li>Virus & malware removal</li>
-      <li>WiFi setup & optimization</li>
-      <li>Printer & smart home setup</li>
-    </ul>
-    <p><strong>$80/hour</strong> • <strong>$50 diagnostic fee</strong> (applied to approved repairs)</p>
+          <div class="pill-row">
+            <span class="pill">Same-day / next-day availability</span>
+            <span class="pill">Clear, upfront pricing</span>
+            <span class="pill">Remote + on-site support</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="tel:+19059025720">Call/Text: 905-902-5720</a>
+            <a class="btn" href="mailto:jgmtech99@gmail.com">Email: jgmtech99@gmail.com</a>
+            <a class="btn" href="#business">Free Business IT Health Check</a>
+          </div>
+
+          <p class="small" style="margin-top:12px;">
+            Residential: <strong>$80/hr</strong> (1-hour minimum) • <strong>$50 diagnostic fee</strong> (applied to approved repairs) • Business: <strong>$95/hr</strong> • After-hours: <strong>$125/hr</strong>
+          </p>
+        </div>
+
+        <aside class="card" aria-label="Quick info">
+          <h3>Quick Info</h3>
+          <div class="small">Mobile service • On-site & remote support</div>
+          <div class="kpi">
+            <div><span>Service area</span><span>KW + Cambridge</span></div>
+            <div><span>Best for</span><span>WiFi • Repairs • Support</span></div>
+            <div><span>Response</span><span>Fast + reliable</span></div>
+          </div>
+          <p class="small" style="margin-top:12px;">
+            Want priority support? Ask about monthly plans for small businesses.
+          </p>
+        </aside>
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="section">
-  <h2>Small Business IT Support</h2>
-  <div class="card">
-    <ul>
-      <li>Network setup & troubleshooting</li>
-      <li>Server setup & maintenance</li>
-      <li>Business VoIP setup</li>
-      <li>Backup & security configuration</li>
-      <li>Ongoing IT support contracts</li>
-    </ul>
-    <p><strong>$95/hour</strong> • After-hours: <strong>$125/hour</strong></p>
-  </div>
-</div>
+  <section id="services">
+    <div class="wrap">
+      <h2>Services</h2>
+      <div class="grid2">
+        <div class="card">
+          <h3>Residential IT Support</h3>
+          <ul>
+            <li>PC building, upgrades & troubleshooting</li>
+            <li>Laptop setup (Windows, macOS, Linux)</li>
+            <li>Laptop troubleshooting, screen & battery replacement (no PCB repair)</li>
+            <li>Software issues, performance tuning, updates</li>
+            <li>Printer setup & troubleshooting</li>
+            <li>Smart home setup & troubleshooting</li>
+            <li>WiFi setup & optimization (mesh, placement, coverage)</li>
+          </ul>
+          <p class="small" style="margin-top:10px;">
+            <strong>$80/hr</strong> (1-hour minimum) • <strong>$50 diagnostic fee</strong> (applied to approved repairs)
+          </p>
+        </div>
 
-<div class="section">
-  <h2>Free IT Health Check</h2>
-  <div class="card">
-    <p>We offer a complimentary IT health check for small businesses including:</p>
-    <ul>
-      <li>Network overview</li>
-      <li>Security & antivirus review</li>
-      <li>Backup verification</li>
-      <li>Hardware lifecycle check</li>
-    </ul>
-  </div>
-</div>
+        <div class="card" id="business">
+          <h3>Small Business IT</h3>
+          <ul>
+            <li>Network setup, troubleshooting & optimization</li>
+            <li>Server setup & maintenance</li>
+            <li>Business VoIP setup</li>
+            <li>Business IT infrastructure and user support</li>
+            <li>Backup planning and cybersecurity basics (MFA, patching, best practices)</li>
+            <li>Ongoing support plans (monthly)</li>
+          </ul>
+          <p class="small" style="margin-top:10px;">
+            <strong>$95/hr</strong> • After-hours: <strong>$125/hr</strong> • Ask about monthly support packages.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="section">
-  <h2>Contact</h2>
-  <p><strong>Phone:</strong> 905-902-5720</p>
-  <p><strong>Email:</strong> jgmtech99@gmail.com</p>
-</div>
+  <section class="callout" id="pricing">
+    <div class="wrap">
+      <div class="grid2">
+        <div>
+          <h2>Simple pricing. No surprises.</h2>
+          <p class="sub" style="margin:0 0 10px; font-size:16px;">
+            You’ll get a clear explanation of the issue and options before we proceed.
+          </p>
+          <ul>
+            <li><strong>Residential:</strong> $80/hr (1-hour minimum)</li>
+            <li><strong>Diagnostic:</strong> $50 (applied to approved repairs)</li>
+            <li><strong>Business:</strong> $95/hr</li>
+            <li><strong>After-hours:</strong> $125/hr</li>
+          </ul>
+          <p class="note">
+            Hardware/parts are billed separately when required. You can approve parts before purchase.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Free IT Health Check for Small Businesses</h3>
+          <p class="small" style="margin-top:0">
+            A quick on-site or remote review to identify risks and quick wins. You’ll receive a simple summary and recommended next steps.
+          </p>
+          <ul>
+            <li>Network & WiFi overview</li>
+            <li>Security basics (AV, MFA, remote access)</li>
+            <li>Backup review</li>
+            <li>Hardware lifecycle check</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <div class="card">
+        <p style="margin-top:0">
+          JGM Technology Services provides reliable, professional IT support to homes and small businesses in the Kitchener–Waterloo region.
+          We focus on clear communication, transparent pricing, and long-term client relationships.
+        </p>
+        <p class="small" style="margin-bottom:0">
+          Serving: Kitchener • Waterloo • Cambridge • Breslau • Baden • New Hamburg
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Request service</h2>
+      <div class="contact">
+        <div class="card">
+          <h3>Tell me what you need</h3>
+          <p class="small">
+            Fill out this form and I’ll reach out to confirm details and schedule a repair or consultation.
+          </p>
+
+          <form action="https://formsubmit.co/jgmtech99@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New website request — JGM Technology Services" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="form-row">
+              <div class="row2">
+                <div>
+                  <label for="name">Name</label>
+                  <input id="name" name="Name" placeholder="Your name" required />
+                </div>
+                <div>
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="Phone" placeholder="905-555-1234" required />
+                </div>
+              </div>
+
+              <div class="row2">
+                <div>
+                  <label for="email2">Email</label>
+                  <input id="email2" name="Email" placeholder="you@example.com" />
+                </div>
+                <div>
+                  <label for="type">Service type</label>
+                  <select id="type" name="Service Type" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option>Residential repair / troubleshooting</option>
+                    <option>WiFi / networking setup</option>
+                    <option>PC build / upgrade</option>
+                    <option>Printer / smart home setup</option>
+                    <option>Small business IT support</option>
+                    <option>Free business IT health check</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row2">
+                <div>
+                  <label for="city">City</label>
+                  <input id="city" name="City" placeholder="Kitchener / Waterloo / Cambridge" required />
+                </div>
+                <div>
+                  <label for="contact2">Preferred contact method</label>
+                  <select id="contact2" name="Preferred Contact" required>
+                    <option value="" selected disabled>Select one</option>
+                    <option>Call</option>
+                    <option>Text</option>
+                    <option>Email</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="details">Details</label>
+                <textarea id="details" name="Details" placeholder="Device model, issue description, any error messages, and best times to reach you"></textarea>
+                <div class="hint">For repairs: include the device model + what changed before the problem started.</div>
+              </div>
+
+              <button class="btn primary" type="submit">Submit Request</button>
+              <div class="hint">
+                Submissions are emailed to <strong>jgmtech99@gmail.com</strong>. First-time setup: FormSubmit may email you once to confirm delivery.
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Contact</h3>
+          <p style="margin:6px 0 0;">
+            <strong>Phone/Text:</strong> <a href="tel:+19059025720">905-902-5720</a><br/>
+            <strong>Email:</strong> <a href="mailto:jgmtech99@gmail.com">jgmtech99@gmail.com</a>
+          </p>
+          <p class="small">
+            Typical hours: Mon–Fri 8:30am–6:00pm • Sat 9:00am–2:00pm
+          </p>
+          <p class="small">
+            Residential: $80/hr • Diagnostic: $50 • Business: $95/hr
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  © 2026 JGM Technology Services • Kitchener–Waterloo Region
+  <div class="wrap">
+    © <span id="y"></span> JGM Technology Services • Kitchener–Waterloo Region
+  </div>
 </footer>
 
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
